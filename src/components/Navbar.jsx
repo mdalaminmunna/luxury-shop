@@ -1,4 +1,4 @@
-import { Link, NavLink, replace, useNavigate } from "react-router";
+import { NavLink } from "react-router";
 import SearchBar from "./SearchBar";
 import { ShoppingCart } from "lucide-react";
 import { CircleUserRound } from "lucide-react";
@@ -9,7 +9,6 @@ import { X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const handleSearch = (query) => {
     console.log("Searching for:", query);
@@ -24,32 +23,32 @@ const Navbar = () => {
           className="lg:hidden p-2 rounded-md"
           onClick={() => setIsMenuOpen(true)}
         >
-          <Menu size={24} />
+          <Menu />
         </button>
 
         <h1 className="font-bold text-[32px]">SHOP.CO</h1>
 
         <ul className="hidden lg:flex items-center justify-center text-sm text-black gap-6 font-normal font-base px-10">
-          <Link to="/" className="hover:opacity-70">
+          <NavLink to="/" className="hover:opacity-70">
             <li>Home</li>
-          </Link>
-          <Link to="/shop" className="hover:opacity-70">
+          </NavLink>
+          <NavLink to="/shop" className="hover:opacity-70">
             <li>Shop</li>
-          </Link>
-          <Link to="/Cart" className="hover:opacity-70">
+          </NavLink>
+          <NavLink to="/Cart" className="hover:opacity-70">
             <li>Cart</li>
-          </Link>
-          <Link to="/checkout" className="hover:opacity-70">
+          </NavLink>
+          <NavLink to="/checkout" className="hover:opacity-70">
             <li>Checkout</li>
-          </Link>
+          </NavLink>
         </ul>
         <div className="flex-1">
           <SearchBar />
         </div>
-        <div className="pl-5 py-4 flex gap-3.5 right-0">
-          <Link to="/cart">
+        <div className="pl-5 py-4 flex gap-3.5 lg:pr-0 pr-4">
+          <NavLink to="/cart">
             <ShoppingCart />
-          </Link>
+          </NavLink>
           <CircleUserRound />
         </div>
       </div>
@@ -71,34 +70,34 @@ const Navbar = () => {
               </button>
             </div>
             <ul className="flex flex-col gap-4 p-4">
-              <Link
+              <NavLink
                 to="/"
                 className="text-lg hover:opacity-70 transition-opacity"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <li>Home</li>
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/shop"
                 className="text-lg hover:opacity-70 transition-opacity"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <li>Shop</li>
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/Cart"
                 className="text-lg hover:opacity-70 transition-opacity"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <li>Cart</li>
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/checkout"
                 className="text-lg hover:opacity-70 transition-opacity"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <li>Checkout</li>
-              </Link>
+              </NavLink>
             </ul>
           </div>
         </div>

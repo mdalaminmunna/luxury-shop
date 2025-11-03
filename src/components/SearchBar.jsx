@@ -23,7 +23,7 @@ export default function SearchBar({ onSearch }) {
         <Search size={20} className="absolute left-4 opacity-40" />
         <input
           // ref={inputRef}
-          // type="text"
+          type="text"
           // value={query}
           // onChange={(event) => setQuery(event.target.value)}
           placeholder="Search for products..."
@@ -48,7 +48,7 @@ export default function SearchBar({ onSearch }) {
           </div>
         ) : (
           <button
-            className="ml-auto p-2 hover:bg-red-500 rounded-full "
+            className="ml-auto p-2 hover:bg-red-500 rounded-full"
             onClick={() => setIsOpen(true)}
           >
             <Search size={20} />
