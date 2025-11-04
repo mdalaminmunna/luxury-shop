@@ -5,6 +5,11 @@ import { Facebook } from "./Icons/facebook";
 import { Twitter } from "./Icons/twitter";
 import { Instagram } from "./Icons/instagram";
 import { Github } from "./Icons/github";
+import { Visa } from "./Icons/visa";
+import { Mastercard } from "./Icons/mastercard";
+import { Paypal } from "./Icons/paypal";
+import { Applepay } from "./Icons/applepay";
+import { Googlepay } from "./Icons/googlepay";
 
 export const Footer = () => {
   const headerClass =
@@ -21,7 +26,7 @@ export const Footer = () => {
       <div className="bg-[#f0f0f0] pt-[125px] md:pt-[145px] px-4 xl:px-0">
         {/* <div className="bg-white flex-1 pt-[170px]"></div> */}
         <div className="container mx-auto">
-          <div className="grid grid-cols-12 gap-y-6 xl:gap-y-0">
+          <div className="grid grid-cols-12 gap-y-6 xl:gap-y-0 pb-[50px] border-b border-black/10">
             <div className="lg:col-span-4 col-span-12">
               <h1 className="font-bold text-[28px] md:text-[32px] mb-2.5 md:mb-5 leading-none">
                 SHOP.CO
@@ -126,8 +131,27 @@ export const Footer = () => {
               </ul>
             </div>
           </div>
-          <div>
-            <p>Shop.co © 2000-2023, All Rights Reserved</p>
+          <div className="lg:flex lg:justify-between lg:mt-3 mt-4">
+            <p className="lg:leading-0 text-sm font-normal text-black/60 lg:mt-5 mb-3 lg:mb-24 text-center">
+              Shop.co © 2000-2025, All Rights Reserved
+            </p>
+            <div className="flex pb-[58px] lg:pb-0 justify-between">
+              <Link>
+                <Visa />
+              </Link>
+              <Link>
+                <Mastercard />
+              </Link>
+              <Link>
+                <Paypal />
+              </Link>
+              <Link>
+                <Applepay />
+              </Link>
+              <Link>
+                <Googlepay />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
