@@ -131,11 +131,11 @@ export const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="lg:flex lg:justify-between lg:mt-3 mt-4">
-            <p className="lg:leading-0 text-sm font-normal text-black/60 lg:mt-5 mb-3 lg:mb-24 text-center">
+          <div className="lg:flex lg:justify-between lg:mt-3 mt-4 pb-20">
+            <p className="lg:leading-0 text-sm font-normal text-black/60 lg:mt-5 mb-3 text-center">
               Shop.co © 2000-2025, All Rights Reserved
             </p>
-            <div className="flex pb-[58px] lg:pb-0 justify-between">
+            <div className="flex lg:pb-0 justify-between">
               <Link>
                 <Visa />
               </Link>
