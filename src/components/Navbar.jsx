@@ -1,14 +1,18 @@
-import { NavLink } from "react-router";
-import SearchBar from "./SearchBar";
+import { Link, NavLink } from "react-router";
+import { useState } from "react";
+
+import { SearchBar } from "./SearchBar";
+import { TopBanner } from "./TopBanner";
+
 import { ShoppingCart } from "lucide-react";
 import { CircleUserRound } from "lucide-react";
-import { TopBanner } from "./TopBanner";
 import { Menu } from "lucide-react";
-import { useState } from "react";
 import { X } from "lucide-react";
+import { Search } from "lucide-react";
 
-const Navbar = () => {
+export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const handleSearch = (query) => {
     console.log("Searching for:", query);
@@ -17,42 +21,56 @@ const Navbar = () => {
   return (
     <div>
       <TopBanner />
-      <div className="container mx-auto flex py-4">
-        {/* <div className="flex items-center justify-between gap-4"> */}
-        <button
-          className="lg:hidden p-2 rounded-md"
-          onClick={() => setIsMenuOpen(true)}
-        >
-          <Menu />
-        </button>
+      <div className="container mx-auto py-4">
+        <div className="flex lg:items-center justify-between lg:gap-10 xl:px-0 px-4">
+          <button
+            className="lg:hidden py-4 pr-3 rounded-md"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <Menu />
+          </button>
 
-        <h1 className="font-bold text-[32px]">SHOP.CO</h1>
+          <Link className="font-integral-bold text-[32px]">SHOP.CO</Link>
 
-        <ul className="hidden lg:flex items-center justify-center text-sm text-black gap-6 font-normal font-base px-10">
-          <NavLink to="/" className="hover:opacity-70">
-            <li>Home</li>
-          </NavLink>
-          <NavLink to="/shop" className="hover:opacity-70">
-            <li>Shop</li>
-          </NavLink>
-          <NavLink to="/Cart" className="hover:opacity-70">
-            <li>Cart</li>
-          </NavLink>
-          <NavLink to="/checkout" className="hover:opacity-70">
-            <li>Checkout</li>
-          </NavLink>
-        </ul>
-        <div className="flex-1">
-          <SearchBar />
-        </div>
-        <div className="pl-5 py-4 flex gap-3.5 lg:pr-0 pr-4">
-          <NavLink to="/cart">
-            <ShoppingCart />
-          </NavLink>
-          <CircleUserRound />
+          <ul className="hidden lg:flex items-center text-base text-black gap-6 font-normal font-base">
+            <NavLink to="/" className="hover:opacity-70">
+              <li>Home</li>
+            </NavLink>
+            <NavLink to="/shop" className="hover:opacity-70">
+              <li>Shop</li>
+            </NavLink>
+            <NavLink to="/Cart" className="hover:opacity-70">
+              <li>Cart</li>
+            </NavLink>
+            <NavLink to="/checkout" className="hover:opacity-70">
+              <li>Checkout</li>
+            </NavLink>
+          </ul>
+
+          <div className="flex-1">
+            <SearchBar
+              isOpen={isSearchOpen}
+              setIsOpen={setIsSearchOpen}
+              onSearch={handleSearch}
+            />
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              className="lg:hidden rounded-md"
+              aria-label="Toggle search"
+              onClick={() => setIsSearchOpen((event) => !event)}
+            >
+              <Search />
+            </button>
+            <NavLink to="/cart">
+              <ShoppingCart />
+            </NavLink>
+            <CircleUserRound />
+          </div>
         </div>
       </div>
-      {/* </div> */}
+
       {isMenuOpen && (
         <div>
           <div
@@ -105,5 +123,3 @@ const Navbar = () => {
     </div>
   );
 };
-
-export default Navbar;

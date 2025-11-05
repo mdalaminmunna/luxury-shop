@@ -1,15 +1,15 @@
-import Navbar from "./components/Navbar";
-import RootLayout from "./layouts/RootLayout";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import Home from "./pages/Home";
-import Shop from "./pages/Shop";
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
 } from "react-router";
+
+import { RootLayout } from "./layouts/RootLayout";
+import { Cart } from "./pages/Cart";
+import { Checkout } from "./pages/Checkout";
+import { Home } from "./pages/Home";
+import { Shop } from "./pages/Shop";
 
 function App() {
   const router = createBrowserRouter(
