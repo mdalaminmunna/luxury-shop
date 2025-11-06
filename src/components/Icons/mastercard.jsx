@@ -23,7 +23,7 @@ export const Mastercard = () => {
           height="30.2545"
           rx="5.49062"
           stroke="#D6DCE5"
-          stroke-width="0.224107"
+          strokeWidth="0.224107"
         />
         <path
           d="M35.844 13.5544H28.9807V25.888H35.844V13.5544Z"

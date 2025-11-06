@@ -7,7 +7,7 @@ export const Newsletter = () => {
         <p className="uppercase font-integral-bold text-3xl md:text-[40px] text-white leading-[45px] md:max-w-xl mb-7 lg:mb-0">
           Stay Upto Date About Our Latest Offers
         </p>
-        <div className="md:w-80 flex flex-col md:gap-y-3.5 gap-y-3">
+        <div className="lg:w-80 flex flex-col md:gap-y-3.5 gap-y-3">
           <div className="w-full relative">
             <Mail
               size={20}
