@@ -18,13 +18,12 @@ export const Footer = () => {
 
   return (
     <>
-      <div className="mb-[-95px] z-1 relative px-4 xl:px-0">
+      <div className="mb-[-95px] z-1 relative">
         <div className="container mx-auto">
           <Newsletter />
         </div>
       </div>
-      <div className="bg-[#f0f0f0] pt-[125px] md:pt-[145px] px-4 xl:px-0">
-        {/* <div className="bg-white flex-1 pt-[170px]"></div> */}
+      <div className="bg-[#f0f0f0] pt-[125px] md:pt-[145px]">
         <div className="container mx-auto">
           <div className="grid grid-cols-12 gap-y-6 xl:gap-y-0 pb-[50px] border-b border-black/10">
             <div className="lg:col-span-4 col-span-12">
